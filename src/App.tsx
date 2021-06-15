@@ -17,7 +17,7 @@ import {Text} from 'elements/Text';
 import {Touchable} from 'elements/Touchable';
 
 class Journal extends Realm.Object {
-  id!: ObjectId;
+  id!: Realm.BSON.ObjectId;
   title!: string;
   content!: string;
   creationDate!: Date;
@@ -117,7 +117,7 @@ const App: () => ReactNode = () => {
   );
 };
 
-const Item = React.memo<{title: string; id: ObjectId}>(
+const Item = React.memo<{title: string; id: Realm.BSON.ObjectId}>(
   ({title, id}) => {
     console.log('rerendering: ', id.toHexString());
     return (
